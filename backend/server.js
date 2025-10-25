@@ -3,11 +3,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-// Import routes
+// Import routes (EXISTING)
 const studentRoutes = require('./routes/student');
 const alumniRoutes = require('./routes/alumni');
 const adminRoutes = require('./routes/admin');
 const connectionRoutes = require('./routes/connection');
+
+// Import NEW routes
+const postRoutes = require('./routes/post');
+const notificationRoutes = require('./routes/notification');
 
 // Import middleware
 const errorHandler = require('./middleware/errorHandler');
@@ -34,11 +38,15 @@ mongoose.connect(process.env.MONGODB_URI, {
   process.exit(1);
 });
 
-// Routes
+// Routes (EXISTING)
 app.use('/api/student', studentRoutes);
 app.use('/api/alumni', alumniRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/connection', connectionRoutes);
+
+// Routes (NEW)
+app.use('/api/post', postRoutes);
+app.use('/api/notification', notificationRoutes);
 
 // Basic route
 app.get('/', (req, res) => {

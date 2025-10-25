@@ -1,0 +1,29 @@
+.App {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+/* Custom styles */
+.gap-3 {
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.5rem 2rem;
+}
+
+/* Card styles */
+.card {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Custom Bootstrap overrides */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
